@@ -2,17 +2,17 @@
 
 /* Variables */
 
-:root{
-    --ingame-bg: #0000004a;
-    --ts: #00000078;
-    --white: #ffffff;
+:root {
+  --ingame-bg: #0000004a;
+  --ts: #00000078;
+  --white: #ffffff;
 }
 
 /* Fonts */
 
 @font-face {
-    font-family: gamefont;
-    src: url(https://fonts.gstatic.com/s/nunito/v20/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmdTQ3jw.woff2);
+  font-family: gamefont;
+  src: url(https://fonts.gstatic.com/s/nunito/v20/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmdTQ3jw.woff2);
 }
 
 /* Updated 11/20 */
@@ -54,30 +54,29 @@
 #termsInfo :not(div[onClick*="Window(35)"]),
 .menuItemTitle,
 #weapDisplay,
-#chatSwitchHolder,
 #menuWindow::-webkit-scrollbar,
 #maxHP,
 #loadTipsHolder,
 #loadInfoLHolder,
 #loadInfoRHolder,
-#curGameInfo {
-    display: none !important;
+#curGameInfo,
+#reloadMsg {
+  display: none !important;
 }
 
 .verticalSeparator {
-    background-color: transparent;
-} 
+  background-color: transparent;
+}
 
 .button,
 .button:hover,
 .quickJoin,
-.setHed{
-	border: hidden !important
+.setHed {
+  border: hidden !important;
 }
 
 .button.buttonB {
-    height: 65px !important;
-    
+  height: 65px !important;
 }
 #subLogoButtons {
   bottom: 8% !important;
@@ -86,7 +85,7 @@
 /* Menu Item Container */
 
 #menuItemContainer {
-    background-color: var(--ingame-bg);
+  background-color: var(--ingame-bg);
 }
 
 .menuItem .menBtnIcn {
@@ -95,44 +94,51 @@
 
 /* HeaderBar */
 .headerBar.headerBarRight {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .headerBar {
-    background-color: var(--ingame-bg);
+  background-color: var(--ingame-bg);
 }
 
 /* Chat Holder */
 
-
 #chatInputHolder {
-    background-color: transparent;
-    border: none;
-    padding-left: 0;
+  width: calc(100% + 40px) !important;
+  background-color: var(--ingame-bg);
+  border: none;
+  padding-left: 0;
 }
 
-#chatInput { 
-    width: calc(100% + 48px) !important;
-    background-color: var(--ingame-bg);
+#chatInput {
+  width: 80%;
+  margin-left: 25px;
+  background-color: transparent;
 }
 
+#chatSwitchHolder {
+  background-color: transparent;
+  display: inline-block;
+  position: absolute;
+  left: 5px;
+}
 /* ammo */
 
 #ammoDisplay {
-    padding: 12px 5PX!important;
-    height: 50px!important;
+  padding: 12px 5px !important;
+  height: 50px !important;
 }
 
 /* timer */
 
 #timerDisplay {
-    align-items: center;
-    padding: 10px 7px 4px 7px !important;
-    height: 50px !important;
+  align-items: center;
+  padding: 10px 7px 4px 7px !important;
+  height: 50px !important;
 }
 
-#timerVal{
-    position: relative;
+#timerVal {
+  position: relative;
 }
 
 /* MISC */
@@ -147,12 +153,12 @@
 #menuWindow.dark,
 .settingsHeader,
 .setHed {
-    border-radius: 2px;
-    background-color: var(--ingame-bg)
+  border-radius: 2px;
+  background-color: var(--ingame-bg);
 }
 
-#hudClassIcon img{
-    background-color: transparent
+#hudClassIcon img {
+  background-color: transparent;
 }
 
 #activateKDM,
@@ -191,35 +197,35 @@
     -1.6px -2px 0px var(--ts) !important;
 }
 
-.settingsHeader{
-    position: relative
+.settingsHeader {
+  position: relative;
 }
 
-#windowHolder{
-    background-color: transparent!important
+#windowHolder {
+  background-color: transparent !important;
 }
 
-.settingsHeader{
-    background-color: transparent
+.settingsHeader {
+  background-color: transparent;
 }
 
 /* fps & ping */
 
 #curGameInfo,
 .debugInfo {
-    padding: 5px
+  padding: 5px;
 }
 
-#curGameInfo div{
-    font-size: 0;
+#curGameInfo div {
+  font-size: 0;
 }
 
 #pingDisplay .material-icons {
-    font-size: 20px !important;
+  font-size: 20px !important;
 }
 
 .adsbygoogle.adsbygoogle-noablate {
-    display: none !important;
+  display: none !important;
 }
 
 #instructions {
@@ -227,76 +233,81 @@
 }
 
 #chatInput::placeholder {
-    color: transparent;
+  color: transparent;
 }
 
 #chatInputHolder::before {
-    content: "";
-    position: absolute;
-    color: #fff;
-    bottom: 17px;
-    left: 70px;
-    opacity: 0.5;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  color: #fff;
+  bottom: 17px;
+  left: 70px;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 #chatHolder:focus-within #chatInputHolder::before {
-    opacity: 0;
+  opacity: 0;
 }
 
 #uiBase.onGame #chatHolder {
-  left: 15px !important;
+  left: 20px !important;
   bottom: 100px !important;
 }
 
 #chatList {
-  width: 375px !important;
-  left: 5px;
+  background-color: var(--ingame-bg);
+  width: 381px !important;
+  left: 0px;
+  bottom: 5px;
 }
-
 
 /* Ingame UI */
 
 #healthValueHolder {
-    padding: 0;
-    margin: 0;
-    position: fixed;
-    left: 40px;
-    bottom: 50px;
-    background-color: transparent;
-    z-index: 9999999 !important;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  left: 50px;
+  bottom: 40px;
+  background-color: transparent;
+  z-index: 9999999 !important;
 }
 #healthValue {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 900;
-    text-shadow: none;
-    filter: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  text-shadow: none;
+  filter: none;
 }
 #healthBar {
-    border-radius: 0px !important;
-    width: 350px;
-    height: 40px;
-    display: inline-flex;
-    justify-content: center;
-    background-color: var(--ingame-bg);
-    padding: 15px;
-    bottom: 40px;
-    left: 80px !important;
+  position: fixed;
+  border-radius: 0px !important;
+  width: 350px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--ingame-bg);
+  padding: 15px;
+  bottom: 20px;
+  left: 20px !important;
 }
 
 .healthBarSeg {
-    width: -webkit-fill-available;
-    margin: 0 -1px;
-    border-radius: 0;
-    background-color: transparent;
+  width: -webkit-fill-available;
+  margin: 0 -1px;
+  border-radius: 0;
+  background-color: transparent;
 }
 .hpBSeg {
-    border-radius: 0;
-    box-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-
-
-
-
+#bottomRight {
+  bottom: 20px !important;
+  right: 20px;
+}
+#ammoDisplay {
+  margin-right: 0;
+}
